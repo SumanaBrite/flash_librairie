@@ -1,0 +1,130 @@
+{# 
+        <nav class="log-nav">
+                <p>Bonjour </p>
+                <p>
+                    <a href="  {{ path('app_logout' ) }}" > <i class="fa fa-sign-out-alt    "></i>
+                       Se Déconnecter</a>
+                </p>
+          
+                <p>
+                    <a href="{{ path('app_login' ) }}"> <i class="fa fa-sign-in-alt    "></i>Se Connecter</a>
+                </p>
+
+                <p>
+                    <a href="{{ path('app_register' )}} ">Créer un compte</a>
+                </p>
+
+        </nav> #}
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Librairie</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+       {# {% if is_granted("IS_AUTHENTICATED_FULLY") %} le rôle IS_AUTHENTICATED_FULLY signifie que l'utilisateur est connecté #}
+        
+      
+          <li class="nav-item">
+          <a class="nav-link" href="{{ path("home") }}">
+
+          {# La variable app permet d'avoir des informations sur l'application. C'est un objet
+          app.user contient un objet de la classe Abonne, avec le sinfos de l'utilisateur connecté. Si aucun utilisateur n'est connecté, 'app.user' est null
+
+          Pour afficher l'identifiant unique de l'utilisateur on peut mettre app.user.pseudo (la propriété que l'on a choisi pour se connecter)
+          ou app.user.username
+          #}
+            <i class="fa fa-user   "></i>
+             {# {{ app.user.nom  }}  #}
+          </a>
+        </li>
+        
+        <!-- DECONNEXION -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path("app_logout") }}">
+            <i class="fa fa-sign-out-alt    "></i> Déconnexion
+          </a>
+        </li>
+
+      {# {% else %} #}
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ path("app_register") }}">
+            <i class="fa fa-sign-in-alt    "></i> Inscription
+          </a>
+        </li>
+      <!-- CONNEXION -->
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ path("app_login") }}">
+            <i class="fa fa-sign-in-alt    "></i> Connexion
+          </a>
+        </li>
+      {# {% endif %} #}
+
+      {# la fonction is_granted() renvoie true si l'utilisateur connecté à le rôle qui est passé en paramètre  #}
+       {# {% if is_granted("ROLE_ADMIN") %} #}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Articles
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("article_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("article_new") }}">Ajouter</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Utilisateurs
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("user") }}">Liste</a>
+            {# <a class="dropdown-item" href="{{ path("abonne_new") }}">Ajouter</a> #}
+          </div>
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Auteurs
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("auteur_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("auteur_new") }}">Ajouter</a>
+          </div>
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categorie (Fiction/Littérature )
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("categorie_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("categorie_new") }}">Ajouter</a>
+          </div>
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Etat( Livre / Articles )
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("etat_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("etat_new") }}">Ajouter</a>
+          </div>
+          
+        </li>
+       {# {% endif %} #}
+
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+ 
+
