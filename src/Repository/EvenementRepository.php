@@ -47,4 +47,14 @@ class EvenementRepository extends ServiceEntityRepository
         ;
     }
     */
+    // public function find3($value): ?Evenement
+    // {
+    //     return $this->createQueryBuilder('e')
+    //         ->andWhere('e.exampleField = :val')
+    //         ->setParameter('val', $value)
+    //         ->getQuery()
+    //         ->getOneOrNullResult()
+    //     ;
+    // }
+
 }

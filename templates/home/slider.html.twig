@@ -1,32 +1,29 @@
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
+
+  {% set nbr = 0 %}
+
+  {% for evenement in evenements  %}
+   
   <div class="carousel-inner">
+ {% if nbr == 0 %}
     <div class="carousel-item active">
-      <img src="image/img1.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Bibila participe à la 14ème salon du livre</h5>
-        <p>Du 12 au 17 Aout 2021, la ville de Paris organise sa 14ème édition du prestigieux salon du livre. Venez nous rejoindre, découvrez les dernieres publications de l'année et renconcontrez les écrivains du monde entier autour des conferneces ou signatures organisées à leur honneur .</p>
-      </div>
-    </div>
+    {% else %}
     <div class="carousel-item">
-      <img src="image/img2.jpg" class="d-block w-100" alt="...">
+    {% endif %}
+    {%  set nbr = nbr + 1 %}
+      <img src="images/uploads/{{ evenement.path }}" class="d-block w-100" alt="{{ evenement.image }}">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Evénement signature et Rencontre avec Edgard Morin</h5>
-        <p>Une et unique date: le 15 Aout 2010.
-           Lors de cette rencontre, le sociologue et philosophe va revenir sur le siècle écoulé, durant lequel s’est accrue « de façon inouïe la puissance humaine, en même temps que, de façon non moins inouïe, l’impuissance humaine ». Venez nous rejoindre pour profiter de cette rencontre inoubliable.</p>
+        <h5>{{ evenement.titre }}</h5>
+        <p> {{ evenement.description }}</p>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="image/img3.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Grande promo du mois</h5>
-        <p>Du 22 au 28 Aout, Biblia vous propose une grande selection de livres à des prix très attractifs. Ne ratez pas cette occasion.</p>
-      </div>
-    </div>
+  {% endfor %}  
   </div>
   <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
