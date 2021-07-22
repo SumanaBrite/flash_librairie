@@ -27,7 +27,7 @@
                 <td>{{ article.dateParution ? article.dateParution|date('Y-m-d') : '' }}</td>
                 <td>{{ article.isbn }}</td>
                 <td>
-                    <img src="images\uploads\{{ article.path }}" alt="article.image"></td> 
+                    <img src="images/uploads/{{ article.path }}" alt="{{ article.image }}"></td> 
                     {# <img src="{{ 'images/uploads/' ~ article.path }}" alt="rust-texture"> #}
 
                 <td>{{ article.prix }}</td>
