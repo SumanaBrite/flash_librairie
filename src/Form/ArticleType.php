@@ -20,6 +20,7 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('isbn')
             ->add('titre')
             ->add('description'
             , TextareaType::class, [
@@ -32,7 +33,7 @@ class ArticleType extends AbstractType
             
             )
             ->add('dateParution')
-            ->add('isbn')
+            
             ->add('image' 
             ,TextType::class, [
                 // 'required' => true,
