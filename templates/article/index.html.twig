@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article index{% endblock %}
+{% block title %}Liste des Articles{% endblock %}
 
 {% block body %}
     <h1>Article index</h1>
@@ -26,7 +26,10 @@
                 <td>{{ article.description }}</td>
                 <td>{{ article.dateParution ? article.dateParution|date('Y-m-d') : '' }}</td>
                 <td>{{ article.isbn }}</td>
-                <td>{{ article.image }}</td>
+                <td>
+                    <img src="images\uploads\{{ article.path }}" alt="article.image"></td> 
+                    {# <img src="{{ 'images/uploads/' ~ article.path }}" alt="rust-texture"> #}
+
                 <td>{{ article.prix }}</td>
                 <td>
                     <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
