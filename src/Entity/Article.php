@@ -64,6 +64,11 @@ class Article
      */
     private $prix;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $path;
+
     
     
     public function getId(): ?int
@@ -175,6 +180,18 @@ class Article
     public function setPrix(string $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getPath(): ?string
+    {
+        return $this->path;
+    }
+
+    public function setPath(?string $path): self
+    {
+        $this->path = $path;
 
         return $this;
     }

@@ -9,9 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
- * @Route("/article")
+ * @Route("/admin/article")
  */
 class ArticleController extends AbstractController
 {
@@ -28,7 +30,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/new", name="article_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
@@ -36,6 +38,25 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+
+            // si il y a une image il faut la placer la ou il faut
+            $imagesDirectory = "images/uploads/";
+            // donc, on commence par récuperer ce qui a été uploadé
+            $imageFile = $form->get('path')->getData();
+            // on test, au cas ou
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // on crée un nom unique de stockage du fichier
+                $safeFileName = $slugger->slug($originalFilename);
+                $finalFilename = $safeFileName . '-' . uniqid() . '.' . $imageFile->guessExtension();
+                // on essaye de deplacer le fichier à sa place finale, sur le serveur
+                $imageFile->move($imagesDirectory, $finalFilename);
+                // et bien sur on n'oubli pas de mettre à jour le path dans l'objet image
+                $article->setPath($finalFilename);
+            }
+
+
+
             $entityManager->persist($article);
             $entityManager->flush();
 

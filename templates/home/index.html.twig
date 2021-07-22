@@ -2,34 +2,48 @@
 
 {% block title %}Bienvenu{% endblock %}
 
+{% block stylesheets %}
+
+<link rel="stylesheet" href="css/style.css" >
+
+{% endblock %}
 
 
-{% block content %}
+{% block body %}
 
-    {% block slider %}
+    {# {% block slider %} #}
 
-    {% endblock  %}
+    {{ include('home/slider.html.twig') }}
+
+    {# {% endblock  %} #}
 
 
     <h2> Aujourd'hui est un nouveau jour </h2>
-    <ul>
-        <li>Home
-        <p> aaaaaaaaaaaaaa
-            aaaaaaaaaaaaaabbbbbbbbb
-            cccccccccccc
-        </p>
-    </li>
-        <li>recherche par ISBN
-        <p> aaaaaaaaaaaaaa
-            aaaaaaaaaaaaaabbbbbbbbb
-            cccccccccccc</p>
-        </li>
-      
-        <li>Recherche par mots clés
-        <p> aaaaaaaaaaaaaa
-            aaaaaaaaaaaaaabbbbbbbbb
-            cccccccccccc</p></li>
 
-    </ul>
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+    {{ include('home/tab_1.html.twig') }}
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+    {{ include('home/tab_2.html.twig') }}
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+    {{ include('home/tab_3.html.twig') }}
+  </li>
+ 
+</ul>
+
+
 
 {% endblock %}
+{# <script>
+var triggerEl = document.querySelector('#myTab a[href="#profile"]')
+bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+
+var triggerFirstTabEl = document.querySelector('#myTab li:first-child a')
+bootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab
+</script> #}
