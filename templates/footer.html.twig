@@ -3,9 +3,11 @@
     <div class="row">
         <div class="col col-6">
         <ul>
-                    <li>CGV</li>
-                    <li>Gestion des cookies</li>
-                    <li>A propos</li>
+                    <li>
+                    <a class="nav-link" href="{{ path("cgv") }}">CGV</a>
+
+                    <li><a class="nav-link" href="{{ path("cookies") }}">Gestion des cookies</li>
+                    <li><a class="nav-link" href="{{ path("apropos") }}">A propos</a></li>
                 </ul>
         </div>
         <div class="col col-6">
@@ -17,7 +19,7 @@
      </div>
             <div class="copyright">
             <p>
-                &copy;BIBLIO - {{"now" | date("Y") }} all right reserved for all countries including Groland
+                &copy;BIBLIO - {{"now" | date("Y") }} Tous droits réservés
             </p>
 
           
