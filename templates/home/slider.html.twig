@@ -1,9 +1,45 @@
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 
+  <ol class="carousel-indicators">
+  
+  {% set nbr = 0 %}
 
+  {% for evenement in evenements  %}
+    {% if nbr == 0 %}
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    {% else %}
+    <li data-target="#carouselExampleCaptions" data-slide-to="{{nbr}}"></li>
+    {% endif %}
+    {%  set nbr = nbr + 1 %}
+    {# <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> #}
+  </ol>
+  {% endfor %}
 
-<h4>  Slider</h4>
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
+  {% set nbr = 0 %}
+
+  {% for evenement in evenements  %}
+   
+  <div class="carousel-inner">
+ {% if nbr == 0 %}
+    <div class="carousel-item active">
+    {% else %}
+    <div class="carousel-item">
+    {% endif %}
+    {%  set nbr = nbr + 1 %}
+      <img src="images/uploads/{{ evenement.path }}" class="d-block w-100" alt="{{ evenement.image }}">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ evenement.titre }}</h5>
+        <p> {{ evenement.description }}</p>
+      </div>
+    </div>
+  {% endfor %}  
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Précédent</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Suivant</span>
+  </a>
+</div>

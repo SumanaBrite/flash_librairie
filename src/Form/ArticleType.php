@@ -48,7 +48,8 @@ class ArticleType extends AbstractType
                 'multiple' => false,
                 'label' => "uploader votre image",
                 'attr' => [
-                    'placeholder' => "parcourir pour trouver l'image"
+                    'placeholder' => "parcourir pour trouver l'image",
+                    'id'          =>  "file"
                 ],
                 'constraints' => [
                     new File([
