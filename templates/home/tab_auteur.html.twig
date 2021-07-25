@@ -1,0 +1,26 @@
+
+    {% set nbr = 0 %}
+    {% for auteur in auteurs %}
+
+        <div class="row">
+            {% if nbr < 2 %}
+                
+				<div class="card h-100">
+					<div class="row g-0">
+					    {# <div class="col-md-2"> #}
+                        {# {% set image = '/images/uploads/' ~ auteur.path %} #}
+					    <img src="/images/uploads/{{auteur.path}}" class="img-fluid rounded-start" alt="{{ auteur.image }}">
+                    </div>
+						<div class="card-body">
+							<h5 class="card-title">{{ auteur.nom ~ auteur.prenom }}</h5>
+							<p class="card-text">{{ auteur.description }}</p>
+						</div>
+						
+				</div>
+		
+               {% set nbr = nbr + 1  %}
+            {% endif %}
+        </div>
+    
+
+    {% endfor %}

@@ -1,4 +1,68 @@
 
 
-<h4>  Onglet deux </h4>
-<hr>
+   <label for="isbn"></label>
+   <input type="text" name="isbn" data-id="  " id="isbn" 
+          onchange="display_info()"   
+         value="978145164854">
+   
+   <label for="titre">Titre</label>
+    <br>
+    <input type="text" name="titre" id="titre">
+
+   <label for="description">Description</label>
+   <br>
+    <textarea id="description" name="description" rows="4" cols="50">
+    </textarea>
+
+   <script type="text/javascript">
+// document.addEventListener('DOMContentLoaded', function() { #}
+function display_info() {
+ // Query the book database by ISBN code.
+  
+  //var userRating = document.querySelector('.js-user-rating');
+  //  var isAuthenticated = userRating.dataset.isAuthenticated;
+  //var id = document.querySelector('#some-link').dataset.id;
+  //var var_isbn = document.querySelector('#isbn').dataset.id;
+  //var var_isbn = var_dom.dataset.id;
+ 
+ var var_isbn = document.querySelector('#isbn').value;
+ 
+  //alert(var_isbn); 
+  var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + var_isbn;
+
+alert( url)
+  var response = UrlFetchApp.fetch(url);
+
+  alert(response); 
+  var results = JSON.parse(response);
+
+alert(results); 
+  if (results.totalItems) {
+
+    // There'll be only 1 book per ISBN
+    var book = results.items[0];
+
+    var title = (book["volumeInfo"]["title"]);
+    var subtitle = (book["volumeInfo"]["subtitle"]);
+    var authors = (book["volumeInfo"]["authors"]);
+    var printType = (book["volumeInfo"]["printType"]);
+    var pageCount = (book["volumeInfo"]["pageCount"]);
+    var publisher = (book["volumeInfo"]["publisher"]);
+    var publisher = (book["volumeInfo"]["description"]);
+    var publishedDate = (book["volumeInfo"]["publishedDate"]);
+    var webReaderLink = (book["accessInfo"]["webReaderLink"]);
+
+   alert(title); 
+    const elem1 = document.getElementById('description');
+    elem1.innerHTML = description;
+
+    const elem2 = document.getElementById('titre');
+    elem2.innerHTML = title;
+
+}
+
+}
+
+</script> 
+
+

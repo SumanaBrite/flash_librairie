@@ -29,159 +29,39 @@
 			<div class="col col-10">
 				<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+						<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Panorama des Livres</a>
 
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Recherche ISBN</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Autre</a>
 					</li>
 				</ul>
 				<div class="tab-content" id="pills-tabContent">
-					<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Onglet 1
+					<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 						{{ include('home/tab_1.html.twig') }}
 					</div>
-					<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Onglet 2
+					<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 						{{ include('home/tab_2.html.twig') }}
-						bbbbbbbb
+						
 					</div>
-					<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Onglet 3...
+					<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 						{{ include('home/tab_3.html.twig') }}
-						ccccc
+					 
 					</div>
 				</div>
 			</div>
-			<div
-				class="col col-2">
-				{# ---- #}
-				<div class="col mr-10">
-					<div class="card h-100">
-						<img src="..." class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">action.</p>
-						</div>
-						<div class="card-footer">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</div>
-					</div>
-				</div>
-				<div class="col mt-2 mr-10">
-					<div class="card h-100">
-						<img src="..." class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">action.</p>
-						</div>
-						<div class="card-footer">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+			<div class="col col-2">
+			    {{ include('home/tab_auteur.html.twig') }}
 
-	</div>
-	<div class="row align-items-start mt-5">
-		<div class="col col-1"></div>
-		<div class="col col-2">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					{# <div class="col-md-2"> #}
-					<img src="..." class="img-fluid rounded-start" alt="...">
-					{# </div> #}
-					{# <div class="col-md-8"> #}
-						<div class="card-body"> <h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a .</p>
-						<p class="card-text">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</p>
-					</div>
-					{# </div> #}
-				</div>
 			</div>
-		</div>
-
-    <div class="col col-2">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					{# <div class="col-md-2"> #}
-					<img src="..." class="img-fluid rounded-start" alt="...">
-					{# </div> #}
-					{# <div class="col-md-8"> #}
-						<div class="card-body"> <h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a </p>
-						<p class="card-text">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</p>
-					</div>
-					{# </div> #}
-				</div>
-			</div>
-
 
 		</div>
-
-    <div class="col col-2">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					{# <div class="col-md-2"> #}
-					<img src="..." class="img-fluid rounded-start" alt="...">
-					{# </div> #}
-					{# <div class="col-md-8"> #}
-						<div class="card-body"> <h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a .</p>
-						<p class="card-text">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</p>
-					</div>
-					{# </div> #}
-				</div>
-			</div>
-
-
+		<div class="row align-items-start mt-5">
+		 {{ include('home/btm.html.twig') }}
 		</div>
-
-    <div class="col col-2">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					{# <div class="col-md-2"> #}
-					<img src="..." class="img-fluid rounded-start" alt="...">
-					{# </div> #}
-					{# <div class="col-md-8"> #}
-						<div class="card-body"> <h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a </p>
-						<p class="card-text">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</p>
-					</div>
-					{# </div> #}
-				</div>
-			</div>
-
-
-		</div>
-
-    <div class="col col-2">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					{# <div class="col-md-2"> #}
-					<img src="..." class="img-fluid rounded-start" alt="...">
-					{# </div> #}
-					{# <div class="col-md-8"> #}
-						<div class="card-body"> <h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a.</p>
-						<p class="card-text">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</p>
-					</div>
-					{# </div> #}
-				</div>
-			</div>
-		</div>
-
 	</div>
 {% endblock %}
 {# <script>

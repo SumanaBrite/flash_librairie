@@ -12,6 +12,7 @@
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Description</th>
+                <th>Texte Image</th>
                 <th>Image</th>
                 <th>actions</th>
             </tr>
@@ -24,9 +25,10 @@
                 <td>{{ auteur.prenom }}</td>
                 <td>{{ auteur.description }}</td>
                 <td>{{ auteur.image }}</td>
+                <td><img src="/images/uploads/{{ auteur.path }}" alt="{{ auteur.image }}"></td>
                 <td>
-                    <a href="{{ path('auteur_show', {'id': auteur.id}) }}">show</a>
-                    <a href="{{ path('auteur_edit', {'id': auteur.id}) }}">edit</a>
+                    <a href="{{ path('auteur_show', {'id': auteur.id}) }}">Afficher</a>
+                    <a href="{{ path('auteur_edit', {'id': auteur.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}

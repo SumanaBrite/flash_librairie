@@ -27,13 +27,12 @@
                 <td>{{ article.dateParution ? article.dateParution|date('Y-m-d') : '' }}</td>
                 <td>{{ article.isbn }}</td>
                 <td>
-                    <img src="images/uploads/{{ article.path }}" alt="{{ article.image }}"></td> 
-                    {# <img src="{{ 'images/uploads/' ~ article.path }}" alt="rust-texture"> #}
-
+                    <img src="/images/uploads/{{ article.path }}" alt="{{ article.image }}"></td> 
+                    
                 <td>{{ article.prix }}</td>
                 <td>
-                    <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+                    <a href="{{ path('article_show', {'id': article.id}) }}">Afficher</a>
+                    <a href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}

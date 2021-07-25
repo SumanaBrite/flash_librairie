@@ -69,6 +69,11 @@ class Article
      */
     private $path;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $editeur;
+
     
     
     public function getId(): ?int
@@ -192,6 +197,18 @@ class Article
     public function setPath(?string $path): self
     {
         $this->path = $path;
+
+        return $this;
+    }
+
+    public function getEditeur(): ?string
+    {
+        return $this->editeur;
+    }
+
+    public function setEditeur(?string $editeur): self
+    {
+        $this->editeur = $editeur;
 
         return $this;
     }
