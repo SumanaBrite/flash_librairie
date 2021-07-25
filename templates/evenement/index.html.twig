@@ -13,8 +13,8 @@
                 <th>Description</th>
                 <th>Ville</th>
                 <th>Date</th>
+                <th>Libellé Image</th>
                 <th>Image</th>
-                <th>Path</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -27,11 +27,11 @@
                 <td>{{ evenement.ville }}</td>
                 <td>{{ evenement.date ? evenement.date|date('Y-m-d') : '' }}</td>
                 <td>{{ evenement.image }}</td>
-                <td><img src="images/uploads/{{ evenement.path }}" alt="{{ evenement.image }}"></td>
+                <td><img src="/images/uploads/{{ evenement.path }}" alt="{{ evenement.image }}"></td>
                       
                 <td>
-                    <a href="{{ path('evenement_show', {'id': evenement.id}) }}">show</a>
-                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">edit</a>
+                    <a href="{{ path('evenement_show', {'id': evenement.id}) }}">Afficher</a>
+                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}

@@ -78,13 +78,39 @@ class AuteurController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="auteur_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Auteur $auteur): Response
+     */ 
+    public function edit(Request $request, Auteur $auteur, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(AuteurType::class, $auteur);
+        $old_path = $auteur->getPath();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
+            // si il y a une image il faut la placer la ou il faut
+            $imagesDirectory = "images/uploads/";
+            // donc, on commence par récuperer ce qui a été uploadé
+            $imageFile = $form->get('path')->getData();
+                    
+            if ($imageFile) {
+                
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // on crée un nom unique de stockage du fichier
+                $safeFileName = $slugger->slug($originalFilename);
+                $finalFilename = $safeFileName . '-' . uniqid() . '.' . $imageFile->guessExtension();
+                // on essaye de deplacer le fichier à sa place finale, sur le serveur
+                $imageFile->move($imagesDirectory, $finalFilename);
+                // mise à jour du path dans l'objet image
+                $auteur->setPath($finalFilename);
+                if ($old_path != "") {
+                
+                    $old_path = $imagesDirectory . $old_path;
+                    unlink($old_path);
+                }
+            }
+
+
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('auteur_index', [], Response::HTTP_SEE_OTHER);

@@ -90,6 +90,13 @@ class ArticleType extends AbstractType
                     return $affichageDansLeSelect;
                 }
             ])
+            ->add('editeur',TextType::class, [
+                'required' => false,
+                'label' => "Editeur",
+                // 'attr' => [
+                //     'placeholder' => "écrivez le titre de votre image"
+                // ]
+            ] )
             
             // ->add('voteMode', EntityType::class, [
             //     'label' => $this->translator->trans('Voting method'),
