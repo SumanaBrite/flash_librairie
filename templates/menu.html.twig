@@ -127,6 +127,16 @@
           
         </li>
 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Messages
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("message_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("message_new") }}">Ajouter</a>
+          </div>
+        </li>
+
       {% else %}
 
         {% if is_granted("ROLE_USER") %}
