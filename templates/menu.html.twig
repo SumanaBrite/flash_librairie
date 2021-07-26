@@ -24,7 +24,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
-       {# {% if is_granted("IS_AUTHENTICATED_FULLY") %} le rôle IS_AUTHENTICATED_FULLY signifie que l'utilisateur est connecté #}
+      {% if is_granted("IS_AUTHENTICATED_FULLY") %} {#le rôle IS_AUTHENTICATED_FULLY signifie que l'utilisateur est connecté #}
         
       
           <li class="nav-item">
@@ -36,34 +36,33 @@
           Pour afficher l'identifiant unique de l'utilisateur on peut mettre app.user.pseudo (la propriété que l'on a choisi pour se connecter)
           ou app.user.username
           #}
-            <i class="fa fa-user   "></i>
-             {# {{ app.user.nom  }}  #}
+            <i class="fa fa-user"></i>{{ app.user.nom }}
           </a>
         </li>
         
         <!-- DECONNEXION -->
         <li class="nav-item">
           <a class="nav-link" href="{{ path("app_logout") }}">
-            <i class="fa fa-sign-out-alt    "></i> Déconnexion
+            <i class="fa fa-sign-out-alt"></i> Déconnexion
           </a>
         </li>
 
-      {# {% else %} #}
+      {% else %}
         <li class="nav-item ">
           <a class="nav-link" href="{{ path("app_register") }}">
-            <i class="fa fa-sign-in-alt    "></i> Inscription
+            <i class="fas fa-door-open"></i> Inscription
           </a>
         </li>
       <!-- CONNEXION -->
         <li class="nav-item ">
           <a class="nav-link" href="{{ path("app_login") }}">
-            <i class="fa fa-sign-in-alt    "></i> Connexion
+            <i class="fa fa-sign-in-alt"></i> Connexion
           </a>
         </li>
-      {# {% endif %} #}
+      {% endif %}
 
       {# la fonction is_granted() renvoie true si l'utilisateur connecté à le rôle qui est passé en paramètre  #}
-       {# {% if is_granted("ROLE_ADMIN") %} #}
+      {% if is_granted("ROLE_ADMIN") %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Articles
@@ -79,7 +78,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ path("user") }}">Liste</a>
-            {# <a class="dropdown-item" href="{{ path("abonne_new") }}">Ajouter</a> #}
+            <a class="dropdown-item" href="{{ path("user_new") }}">Ajouter</a>
           </div>
           
         </li>
@@ -127,7 +126,17 @@
           </div>
           
         </li>
-       {# {% endif %} #}
+
+      {% else %}
+
+       
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path("article_index") }}">Articles</a>
+        </li>
+        
+
+      
+      {% endif %}
 
     </ul>
     {# <form class="form-inline my-2 my-lg-0">
