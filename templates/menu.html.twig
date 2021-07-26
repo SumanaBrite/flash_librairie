@@ -94,7 +94,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Evenement
+            Evènements
   
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -106,7 +106,7 @@
 
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Categorie
+            Catégories
   
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -118,7 +118,7 @@
        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Etat
+        Etats
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ path("etat_index") }}">Liste</a>
@@ -129,10 +129,41 @@
 
       {% else %}
 
-       
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path("article_index") }}">Articles</a>
-        </li>
+        {% if is_granted("ROLE_USER") %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path("article_index") }}">Articles</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path("auteur_index") }}">Auteurs</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path("categorie_index") }}">Catégories</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path("etat_index") }}">Etats</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path("evenement_index") }}">Evènements</a>
+          </li>
+
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path("article_index") }}">Articles</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path("auteur_index") }}">Auteurs</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path("evenement_index") }}">Evenements</a>
+          </li>
+        {% endif %}
         
 
       
