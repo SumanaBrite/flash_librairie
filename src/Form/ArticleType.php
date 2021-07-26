@@ -93,9 +93,9 @@ class ArticleType extends AbstractType
             ->add('editeur',TextType::class, [
                 'required' => false,
                 'label' => "Editeur",
-                // 'attr' => [
-                //     'placeholder' => "écrivez le titre de votre image"
-                // ]
+                'attr' => [
+                    'placeholder' => "Nom éditeur"
+                ]
             ] )
             
             // ->add('voteMode', EntityType::class, [

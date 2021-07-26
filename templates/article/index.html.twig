@@ -15,6 +15,7 @@
                 <th>Isbn</th>
                 <th>Image</th>
                 <th>Prix</th>
+                <th>Editeur</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -30,10 +31,12 @@
                     <img src="/images/uploads/{{ article.path }}" alt="{{ article.image }}"></td> 
                     
                 <td>{{ article.prix }}</td>
+                <td>{{ article.editeur }}</td>
                 <td>
                     <a href="{{ path('article_show', {'id': article.id}) }}">Afficher</a>
                     <a href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
                 </td>
+
             </tr>
         {% else %}
             <tr>
