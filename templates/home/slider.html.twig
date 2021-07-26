@@ -1,6 +1,6 @@
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 
-  <ol class="carousel-indicators">
+  {# <ol class="carousel-indicators">
   
   {% set nbr = 0 %}
 
@@ -11,9 +11,8 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="{{nbr}}"></li>
     {% endif %}
     {%  set nbr = nbr + 1 %}
-    {# <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> #}
-  </ol>
-  {% endfor %}
+   </ol> 
+  {% endfor %}#}
 
   {% set nbr = 0 %}
 
@@ -28,7 +27,7 @@
     {%  set nbr = nbr + 1 %}
       <img src="/images/uploads/{{ evenement.path }}" class="d-block w-100" alt="{{ evenement.image }}">
       <div class="carousel-caption d-none d-md-block">
-        <h5>{{ evenement.titre }}</h5>
+        <h1>{{ evenement.titre }}</h1>
         <p> {{ evenement.description }}</p>
       </div>
     </div>
@@ -43,3 +42,4 @@
     <span class="sr-only">Suivant</span>
   </a>
 </div>
+

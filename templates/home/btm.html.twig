@@ -1,31 +1,35 @@
-<br>
-<br>
-<hr>
-<br>
+
+
+
 {%  set nbr = 0 %}
+<div class="row mt-5">
+
 
 
 {# <div class="col col-1"></div> #}
+
  {% for article in articles %}   
 
-    {% if nbr < 5 %}
+    {% if nbr < 6 %}
         
                 <div class="col col-2">
-                    <div class="card mt-3" style="max-width: 540px;">
+                    <div class="card mt-3 shadow" >
                        
                            
                         <div class="card-body"> 
-                            <h5 class="card-title">{{ article.titre }} title</h5>
+                            <h5 class="card-title mb-0">{{ article.titre }} title</h5>
                             
-                            <img src="/images/uploads/{{ article.path }}" class="d-block w-100" alt="{{ article.image }}">
                         </div>
+                            <img src="/images/uploads/{{ article.path }}" class="cover-image-bottom card-img-bottom" alt="{{ article.image }}">
                            
                        
                     </div>
                 </div>
-        </div>
     {% endif %} 
+   
     {%  set nbr = nbr + 1 %}
-{% endfor %}
+{% endfor %} 
+
+</div>
 
 

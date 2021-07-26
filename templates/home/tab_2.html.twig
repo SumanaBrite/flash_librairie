@@ -3,36 +3,38 @@
   {# Gestion de l'appel API #}
   <form action="{{ path('home_hydrate') }}" method="post">
     <label for="isbn_api">
-      faire une recherche depuis l'ISBN
+      Faire une recherche depuis l'ISBN
     </label>
-    <br>
-    <input type="text" name="isbn_api">
-    <button>Rechercher depuis l'ISBN</button>
+     <div class="d-flex">
+    <input type="text" name="isbn_api" class="form-control w-50 mr-2 form-control">
+    <button class="btn btn-primary">Rechercher depuis l'ISBN</button>
+     </div>
   </form>
   <hr>
 
 
    <label for="isbn">ISBN</label>
-   <br>
-   <input type="text" name="isbn" data-id="  " id="isbn"  disabled
+   <div>
+   <input class="form-control" type="text" name="isbn" data-id="  " id="isbn"  disabled
           {# onchange="display_info()"  value="{{ }}978145164854"  #}
          value="{{ isbn }}"  
          >
-    <br>
+   </div> 
    
    <label for="titre">Titre</label>
-    <br>
-    <input type="text" name="titre" id="titre" value="{{ titre }}"  disabled>
-   <br>
-   <label for="description">Description</label>
-   <br>
-    <textarea id="description" name="description" rows="4" cols="50"  disabled >
+   <div>
+    <input class="form-control" type="text" name="titre" id="titre" value="{{ titre }}"  disabled>
+   </div>
+    <label for="description">Description</label>
+ <div>
+    <textarea class="form-control" id="description" name="description" rows="4" cols="50"  disabled >
         {{ description }}
     </textarea>
-     <br>
+ </div> 
   <label for="message" readonly>Message</label>
-   <br>
-   <input type="text" name="message"  value="{{ message }} "  disabled> 
+  <div>
+   <input class="form-control" type="text" name="message"  value="{{ message }} "  disabled> 
+  </div>
 
 
 

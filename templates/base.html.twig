@@ -52,7 +52,9 @@
             background: var(--primary);
             color: var(--white);
         }
-
+.navbar {
+    margin-bottom: 0px;
+}
         .btn-primary {
             background-color: var(--primary);
             border-color: var(--primary);
@@ -150,6 +152,10 @@
 
             color: var(--light-black-0);
         }
+        .layout-bg{
+                   background: #fbfbfb;
+                padding: 50px;
+        }
 
         .tab-primary .nav-link:focus,
         .tab-primary .nav-link:hover {
@@ -159,7 +165,7 @@
 
 
         .carousel-caption {
-            bottom: 11.25rem;
+                bottom: 7.25rem;
         }
 
 
@@ -195,6 +201,48 @@
 		object-fit:cover;
 		object-position:top;
 		}
+		.main-body{¨
+		    min-height: calc(100vh - 260px );
+		}
+        .nav-tab-primary{¨
+           padding: 20px 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        }
+          .nav-tab-primary .nav-tabs .nav-link{
+                 padding: 13px;
+    font-size: 16px;
+         
+         }
+          .nav-tab-primary  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: var(--light-black-0);
+    background-color: #fff;
+    border-color: #ffffff #ffffff #fff;
+    border-radius: 0px;
+    border-bottom: 3px solid  var(--primary);
+}
+.cover-image{
+    height: 190px!important;
+    object-fit: cover;
+    border-bottom: 1px solid #f1f1f1;
+}
+  .cover-image-bottom{
+    height: 190px!important;
+    object-fit: cover;
+    border-top: 1px solid #f1f1f1;
+}
+ .carousel-item {
+    min-height: 381px;
+}
+     
+.nav-tab-primary .nav-link:focus, .nav-tab-primary .nav-link:hover {
+   color: var(--light-black-0);
+    background-color: #fff;
+    border-color: #ffffff #ffffff #fff;
+    border-radius: 0px;
+    border-bottom: 3px solid  var(--primary);
+}
 		</style>
 		{% block stylesheets %}
         
@@ -210,7 +258,7 @@
 	<body>
 		{{ include('menu.html.twig') }}
 
-		<div class="container py-5"> 
+		<div class=" main-body"> 
         {% block body %}
         {% endblock %}
 		<hr>

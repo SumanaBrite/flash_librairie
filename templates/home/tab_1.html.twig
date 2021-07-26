@@ -1,5 +1,5 @@
 
-<div id="tab1">
+<div id="tab1" class="px-5" >
 
 {# <h4>  Panorama des livres </h4> #}
 
@@ -15,25 +15,22 @@
         {% if article.categorie.id == categorie.id %}
             {% if nbr == 0 %}
              {%  set flg = 1 %}
-               <hr>
-               <h4 class=""> {{ categorie.libelle }}</h4>
-               <hr>
-                <div class="row align-items-start mt-5">
+               <h3 class="text-center p-2  text-uppercase"> {{ categorie.libelle }}</h3>
+                <div class="row">
             {% endif  %}
-            {% if nbr < 5 %}
-                <div class="col col-2">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                        
-                            <img src="/images/uploads/{{ article.path }}" class="d-block w-100" alt="{{ article.image }}">
+            {% if nbr < 3 %}
+                <div class="col col-4">
+                    <div class="card mb-3 shadow">
+                         
+                            <img src="/images/uploads/{{ article.path }}" class="cover-image card-img-top" alt="{{ article.image }}">
                         
                                 <div class="card-body"> <h5 class="card-title">{{ article.titre }}</h5>
                                     <p class="card-text">{{ article.description }}</p>
                                 
                                 </div>
-                        
-                        </div>
+                         
                     </div>
+                    
                 </div>  
                  {%  set nbr = nbr + 1 %}
             {% endif %}
