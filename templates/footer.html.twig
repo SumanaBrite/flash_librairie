@@ -1,30 +1,104 @@
+<footer class="py-8 py-md-11 bg-gray-200">
+	<div class="container">
+		<div class="row">
+			<div
+				class="col-12 col-md-4 col-lg-3">
+
+				<!-- Brand -->
+				<img
+				src="./logo5.jpeg" alt="logo" class="footer-brand img-fluid mb-2">
+
+				<!-- Text -->
+				<p class="text-gray-700 mb-2">
+					&copy;BIBLIA -
+					{{"now" | date("Y") }}
+					Tous droits réservés
+				</p>
+
+				<!-- Social -->
+				<ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
+					<li class="list-inline-item list-social-item me-3">
+						<a href="#!" class="text-decoration-none">
+							<i class="fab fa-facebook-f list-social-icon"></i>
+						</a>
+					</li>
+					<li class="list-inline-item list-social-item me-3">
+						<a href="#!" class="text-decoration-none">
+							<i class="fab fa-twitter-square list-social-icon"></i>
+
+						</a>
+					</li>
+					<li class="list-inline-item list-social-item me-3">
+						<a href="#!" class="text-decoration-none">
+							<i class="fab fa-instagram  list-social-icon"></i>
+						</a>
+					</li>
+					<li class="list-inline-item list-social-item">
+						<a href="#!" class="text-decoration-none">
+							<i class="fab fa-twitter-square list-social-icon"></i>
+
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			<div
+				class="col-6 col-md-3 col-lg-3">
 
 
-    <div class="row">
-        <div class="col col-6">
-        <ul>
-                    
-                    <li><a class="nav-link" href="{{ path("apropos") }}">A propos</a></li>
-                    <li><a class="nav-link" href="{{ path("cookies") }}">Gestion des cookies</li>
-                    <li><a class="nav-link" href="{{ path("cgv") }}">Conditions générales de vente</a>
-                    <li><a class="nav-link" href="{{ path("cus") }}">Conditions d'utilisation du site</a>
-                    
-                </ul>
-        </div>
-        <div class="col col-6">
-        <ul>
-                    <li><a class="nav-link" href="{{ path("faq") }}">FAQ</a></li>
-                    <li><a class="nav-link" href="{{ path("contact") }}">Nous contacter</a></li>
-                    <li><a class="nav-link" href="{{ path("rejoindre") }}">Nous rejoindre</a></li>
-                    <li><a class="nav-link" href="{{ path("reseaux") }}">Réseaux sociaux</a></li>
-                    
-                </ul>
-        </div>
-     </div>
-            <div class="copyright">
-            <p>
-                &copy;BIBLIA - {{"now" | date("Y") }} Tous droits réservés
-            </p>
+				<!-- List -->
+				<ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
 
-          
-        </div>
+					<li class="mb-3">
+						<a class="text-reset" href="{{ path("apropos") }}">A propos
+						</a>
+					</li>
+					<li class="mb-3">
+						<a class="text-reset" href="{{ path("cookies") }}">Gestion des cookies</li>
+					</li>
+                    <li class="mb-3">
+						<a class="text-reset" href="{{ path("rejoindre") }}">Nous rejoindre</a>
+					</li>
+									</ul>
+
+			</div>
+			<div
+				class="col-6 col-md-3 col-lg-3">
+
+				<!-- List -->
+				<ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+					<li class="mb-3">
+						<a class="text-reset" href="{{ path("cgv") }}">Conditions générale de vente</a>
+					</li>
+					<li class="mb-3">
+						<a class="text-reset" href="{{ path("cus") }}">Conditions d'utilisation du site</a>
+					</li>
+                    <li class="mb-3">
+						<a class="text-reset" href="{{ path("reseaux") }}">Réseaux sociaux</a>
+					</li>
+
+				</ul>
+
+			</div>
+			<div
+				class="col-6 col-md-3 offset-md-3 col-lg-2 offset-lg-0">
+
+
+				<!-- List -->
+				<ul class="list-unstyled text-muted mb-0">
+
+					<li class="mb-3">
+						<a class="text-reset" href="{{ path("faq") }}">FAQ</a>
+					</li>
+					<li class="mb-3">
+						<a class="text-reset" href="{{ path("contact") }}">Nous contacter</a>
+					</li>
+				</ul>
+
+			</div>
+			 
+		</div>
+		<!-- / .row -->
+	</div>
+	<!-- / .container -->
+</footer>

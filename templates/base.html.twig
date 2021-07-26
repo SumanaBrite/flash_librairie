@@ -18,8 +18,184 @@
 
 		{# Run `composer require symfony/webpack-encore-bundle`
 		           and uncomment the following Encore helpers to start using Symfony UX #}
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+        <link rel="stylesheet" href="css/style.css">
+		<style>
+		 :root {
+            --primary: #f15f2a;
+            --secondary: #955739;
+            --white: #ffffff;
+            --light-black-0: #222222;
+            --light-black: #29272e;
+            --lighter-black: #333;
+        }
 
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        body {
+            margin: 0px;
+            padding: 0px;
+            color: var(--light-black);
+            font-size: 14px;
+            background-color: var(--white);
+            font-family: 'Merriweather Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        .header-top .list-group-item {
+            border: 1px solid transparent;
+        }
+
+        .header-top {
+            background: var(--primary);
+        }
+
+        .header-top .list-group-item {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            box-shadow: none;
+            color: var(--white);
+        }
+
+        .btn-outline-primary:hover {
+            color: var(--white);
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            color: var(--white);
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .nav-pills .nav-link {
+            font-size: 16px;
+            text-transform: uppercase;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+
+
+        }
+
+        .nav-line .nav-pills .nav-link {
+            border-radius: 0px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-line .nav-link {
+            color: var(--light-black);
+            margin: 5px;
+        }
+
+        .nav-line .nav-pills .nav-link.active,
+        .nav-line .nav-pills .show>.nav-link {
+            color: var(--lighter-black);
+            background-color: transparent;
+            border-bottom: 2px solid var(--primary);
+            border-radius: 0px;
+        }
+
+        .nav-line .nav-link:focus,
+        .nav-line .nav-link:hover {
+            border-radius: 0px;
+            color: var(--light-black);
+            border-bottom: 2px solid var(--primary);
+        }
+
+
+
+
+
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .tab-primary .nav-pills .nav-link {
+            margin: 10px;
+
+            border: 1px solid var(--primary);
+            color: var(--primary);
+
+        }
+
+        .tab-primary .nav-pills .nav-link.active,
+        .tab-primary .nav-pills .show>.nav-link {
+            margin: 10px;
+
+            border: 1px solid var(--primary);
+            color: var(--white);
+
+        }
+
+        .tab-primary .nav-link:focus,
+        .tab-primary .nav-link:hover {
+            color: var(--white);
+            background-color: var(--primary);
+        }
+
+
+        .nav-link {
+
+            color: var(--light-black-0);
+        }
+
+        .tab-primary .nav-link:focus,
+        .tab-primary .nav-link:hover {
+            color: var(--white);
+            background-color: var(--primary);
+        }
+
+
+        .carousel-caption {
+            bottom: 11.25rem;
+        }
+
+
+
+        .carousel-item::before {
+            display: block;
+            clear: both;
+            content: " ";
+            background: #00000080;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+        }
+
+        footer {
+            background-color: var(--light-black-0);
+            padding: 50px;
+            color: var(--white);
+        }
+
+        footer i,
+        footer a,footer .text-reset {
+            color: var(--white)!important;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+        .img-small{¨
+		max-height:53px;
+		width:53px;
+		object-fit:cover;
+		object-position:top;
+		}
+		</style>
 		{% block stylesheets %}
         
         
@@ -34,16 +210,16 @@
 	<body>
 		{{ include('menu.html.twig') }}
 
-		<div class="container"> 
+		<div class="container py-5"> 
         {% block body %}
         {% endblock %}
 		<hr>
         </div> 
-		<footer>
+		<div>
 		{% block piedDePage %}
         		{{ include('footer.html.twig') }}
 				{% endblock %}
-		</footer>
+		</div>
 		
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

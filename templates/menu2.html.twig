@@ -1,0 +1,524 @@
+
+{% include "base.html.twig" %}
+<main>
+	<div class="container-fluid header-top">
+		<div class="">
+			<div class="d-flex justify-content-between">
+				<ul class="list-group list-group-horizontal">
+					<li class="list-group-item">
+						<i class="fa fa-map-marker"></i>
+						160 White Oak Drive Kansas City
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-phone"></i>
+						012 987 650</li>
+				</ul>
+				<ul class="list-group list-group-horizontal">
+					<li class="list-group-item">
+						<i class="fab fa-facebook-f"></i>
+					</li>
+					<li class="list-group-item">
+						<i class="fab fa-twitter-square"></i>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	<div class="container-fluid">
+
+		<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between   border-bottom nav-line">
+			<a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none p-1">
+				<img src="image/logo5.jpeg" alt="logo">
+			</a>
+
+			<ul class="nav nav-pills" id="pills-tab" role="tablist">
+				<li class="nav-item" role="presentation">
+					<a href="{{ path("home") }}" class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Acceuil</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Articles
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{{ path("article_index") }}">Liste</a>
+						<a class="dropdown-item" href="{{ path("article_new") }}">Ajouter</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Auteurs
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("auteur_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("auteur_new") }}">Ajouter</a>
+          </div>
+          
+        </li>
+				<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categorie
+  
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("categorie_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("categorie_new") }}">Ajouter</a>
+          </div>
+          
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Etat
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("etat_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("etat_new") }}">Ajouter</a>
+          </div>
+          
+        </li>
+
+
+				<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Evenement
+  
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path("evenement_index") }}">Liste</a>
+            <a class="dropdown-item" href="{{ path("evenement_new") }}">Ajouter</a>
+          </div>
+          
+        </li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Utilisateurs
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{{ path("user") }}">Liste</a>
+						{# <a class="dropdown-item" href="{{ path("abonne_new") }}">Ajouter</a> #}
+					</div>
+
+				</li>
+			</ul>
+			<div class="col-md-3 text-end">
+				<button type="button" class="btn btn-outline-primary btn-sm me-2 ">Connexion</button>
+				<button type="button" class="btn btn-primary btn-sm">Inscription</button>
+			</div>
+		</header>
+	</div>
+	
+
+	<div class="container-fluid  tab-primary p-5 ">
+		<div class="d-flex align-items-start">
+			<div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+				<button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+				<button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+				<button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+				<button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+			</div>
+			<div class="tab-content" id="v-pills-tabContent">
+				<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="row">
+						<div class="col-sm-12 mb-3">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">With supporting text below as a natural lead-in to
+										                                            additional content.</p>
+									<a href="#" class="btn btn-secondary btn-sm">Go somewhere</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">With supporting text below as a natural lead-in to
+										                                            additional content.</p>
+									<a href="#" class="btn btn-secondary btn-sm">Go somewhere</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">With supporting text below as a natural lead-in to
+										                                            additional content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">With supporting text below as a natural lead-in to
+										                                            additional content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+				<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+			</div>
+		</div>
+	</div>
+	<!-- Marketing messaging and featurettes
+	        ================================================== -->
+	<!-- Wrap the rest of the page in another container to center all the content. -->
+
+	<div
+		class="container marketing">
+
+		<!-- Three columns of text below the carousel -->
+		<div class="row">
+			<div class="col-lg-4">
+				<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveaspectratio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title>
+					<rect width="100%" height="100%" fill="#777"></rect>
+					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+				</svg>
+
+				<h2>Heading</h2>
+				<p>Some representative placeholder content for the three columns of text below the carousel. This is
+					                        the first column.</p>
+				<p>
+					<a class="btn btn-secondary" href="#">View details »</a>
+				</p>
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveaspectratio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title>
+					<rect width="100%" height="100%" fill="#777"></rect>
+					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+				</svg>
+
+				<h2>Heading</h2>
+				<p>Another exciting bit of representative placeholder content. This time, we've moved on to the
+					                        second column.</p>
+				<p>
+					<a class="btn btn-secondary" href="#">View details »</a>
+				</p>
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveaspectratio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title>
+					<rect width="100%" height="100%" fill="#777"></rect>
+					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+				</svg>
+
+				<h2>Heading</h2>
+				<p>And lastly this, the third column of representative placeholder content.</p>
+				<p>
+					<a class="btn btn-secondary" href="#">View details »</a>
+				</p>
+			</div>
+			<!-- /.col-lg-4 -->
+		</div>
+		<!-- /.row -->
+
+
+		<!-- START THE FEATURETTES -->
+
+		<hr class="featurette-divider">
+
+		<div class="row featurette">
+			<div class="col-md-7">
+				<h2 class="featurette-heading">First featurette heading.
+					<span class="text-muted">It’ll blow your
+						                            mind.</span>
+				</h2>
+				<p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
+					                        prose here.</p>
+			</div>
+			<div class="col-md-5">
+				<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveaspectratio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title>
+					<rect width="100%" height="100%" fill="#eee"></rect>
+					<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+				</svg>
+
+			</div>
+		</div>
+
+		<hr class="featurette-divider">
+
+		<div class="row featurette">
+			<div class="col-md-7 order-md-2">
+				<h2 class="featurette-heading">Oh yeah, it’s that good.
+					<span class="text-muted">See for
+						                            yourself.</span>
+				</h2>
+				<p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
+					                        how this layout would work with some actual real-world content in place.</p>
+			</div>
+			<div class="col-md-5 order-md-1">
+				<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveaspectratio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title>
+					<rect width="100%" height="100%" fill="#eee"></rect>
+					<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+				</svg>
+
+			</div>
+		</div>
+
+		<hr class="featurette-divider">
+
+		<div class="row featurette">
+			<div class="col-md-7">
+				<h2 class="featurette-heading">And lastly, this one.
+					<span class="text-muted">Checkmate.</span>
+				</h2>
+				<p class="lead">And yes, this is the last block of representative placeholder content. Again, not
+					                        really intended to be actually read, simply here to give you a better view of what this would
+					                        look like with some actual content. Your content.</p>
+			</div>
+			<div class="col-md-5">
+				<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveaspectratio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title>
+					<rect width="100%" height="100%" fill="#eee"></rect>
+					<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+				</svg>
+
+			</div>
+		</div>
+
+		<hr
+		class="featurette-divider">
+
+	<!-- /END THE FEATURETTES -->
+
+	</div>
+	<!-- /.container -->
+
+	<footer class="py-8 py-md-11 bg-gray-200">
+		<div class="container">
+			<div class="row">
+				<div
+					class="col-12 col-md-4 col-lg-3">
+
+					<!-- Brand -->
+					<img
+					src="./logo1.jpeg" alt="logo" class="footer-brand img-fluid mb-2">
+
+					<!-- Text -->
+					<p class="text-gray-700 mb-2">
+						A better way to build.
+					</p>
+
+					<!-- Social -->
+					<ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
+						<li class="list-inline-item list-social-item me-3">
+							<a href="#!" class="text-decoration-none">
+								<i class="fab fa-facebook-f list-social-icon"></i>
+							</a>
+						</li>
+						<li class="list-inline-item list-social-item me-3">
+							<a href="#!" class="text-decoration-none">
+								<i class="fab fa-twitter-square list-social-icon"></i>
+
+							</a>
+						</li>
+						<li class="list-inline-item list-social-item me-3">
+							<a href="#!" class="text-decoration-none">
+								<i class="fab fa-instagram  list-social-icon"></i>
+							</a>
+						</li>
+						<li class="list-inline-item list-social-item">
+							<a href="#!" class="text-decoration-none">
+								<i class="fab fa-twitter-square list-social-icon"></i>
+
+							</a>
+						</li>
+					</ul>
+
+				</div>
+				<div
+					class="col-6 col-md-4 col-lg-2">
+
+					<!-- Heading -->
+					<h6 class="fw-bold text-uppercase text-gray-700">
+						Products
+					</h6>
+
+					<!-- List -->
+					<ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Page Builder
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								UI Kit
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Styleguide
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Documentation
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="text-reset">
+								Changelog
+							</a>
+						</li>
+					</ul>
+
+				</div>
+				<div
+					class="col-6 col-md-4 col-lg-2">
+
+					<!-- Heading -->
+					<h6 class="fw-bold text-uppercase text-gray-700">
+						Services
+					</h6>
+
+					<!-- List -->
+					<ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Documentation
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Changelog
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Pagebuilder
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="text-reset">
+								UI Kit
+							</a>
+						</li>
+					</ul>
+
+				</div>
+				<div
+					class="col-6 col-md-4 offset-md-4 col-lg-2 offset-lg-0">
+
+					<!-- Heading -->
+					<h6 class="fw-bold text-uppercase text-gray-700">
+						Connect
+					</h6>
+
+					<!-- List -->
+					<ul class="list-unstyled text-muted mb-0">
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Page Builder
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								UI Kit
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Styleguide
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Documentation
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Changelog
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Documentation
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="text-reset">
+								Changelog
+							</a>
+						</li>
+					</ul>
+
+				</div>
+				<div
+					class="col-6 col-md-4 col-lg-2">
+
+					<!-- Heading -->
+					<h6 class="fw-bold text-uppercase text-gray-700">
+						Legal
+					</h6>
+
+					<!-- List -->
+					<ul class="list-unstyled text-muted mb-0">
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Documentation
+							</a>
+						</li>
+						<li class="mb-3">
+							<a href="#!" class="text-reset">
+								Changelog
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="text-reset">
+								Pagebuilder
+							</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<!-- / .row -->
+		</div>
+		<!-- / .container -->
+	</footer>
+
+
+</main>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    --></body></html><div class=""><div class="d-flex justify-content-between">
+<ul class="list-group list-group-horizontal">
+	<li class="list-group-item">
+		<i class="fa fa-map-marker"></i>
+		160 White Oak Drive Kansas City
+	</li>
+	<li class="list-group-item">
+		<i class="fa fa-phone"></i>
+		012 987 650</li>
+</ul>
+<ul class="list-group list-group-horizontal">
+	<li class="list-group-item">
+		<i class="fab fa-facebook-f"></i>
+	</li>
+	<li class="list-group-item">
+		<i class="fab fa-twitter-square"></i>
+	</li>
+</ul></div></div></div>

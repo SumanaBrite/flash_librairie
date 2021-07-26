@@ -1,0 +1,44 @@
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+	<div class="carousel-indicators">
+		{% set nbr = 0 %}
+		{% for evenement in evenements  %}
+			{% if nbr == 0 %}
+				<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+			{% else %}
+				<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{nbr}}" aria-label="Slide 2" class=""></button>
+			{% endif %}
+			{%  set nbr = nbr + 1 %}
+			{# <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button> #}
+
+		</div>
+	{% endfor %}
+
+	{% set nbr = 0 %}
+
+	{% for evenement in evenements  %}
+		<div class="carousel-inner">
+			{% if nbr == 0 %}
+				<div class="carousel-item active">
+				{% else %}
+					<div class="carousel-item">
+					{% endif %}
+					{% set nbr = nbr + 1 %}
+					<img src="/images/uploads/{{ evenement.path }}" alt="{{ evenement.image }}">
+					<div class="container">
+						<div class="carousel-caption text-start">
+							<h1>{{ evenement.titre }}</h1>
+							<p>{{ evenement.description }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
