@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Categorie{% endblock %}
+{% block title %}Editer une catégorie{% endblock %}
 
 {% block body %}
-    <h1>Edit Categorie</h1>
+    <h1>Editer une catégorie</h1>
+    <br></br>
 
-    {{ include('categorie/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('categorie/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('categorie_index') }}">back to list</a>
+    <br></br>
+
+    <a href="{{ path('categorie_index') }}" class="btn btn-secondary btn-lg">retour à la liste</a>
+
+    <br></br>
 
     {{ include('categorie/_delete_form.html.twig') }}
 {% endblock %}

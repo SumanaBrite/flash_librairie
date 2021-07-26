@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Categorie index{% endblock %}
+{% block title %}Catégories{% endblock %}
 
 {% block body %}
-    <h1>Categorie index</h1>
+    <h1>Catégorie</h1>
+    <br></br>
 
     <table class="table">
         <thead>
@@ -19,17 +20,19 @@
                 <td>{{ categorie.id }}</td>
                 <td>{{ categorie.libelle }}</td>
                 <td>
-                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}">Afficher</a>
-                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">Modifier</a>
+                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}">👀Voir</a>
+                    /
+                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">📝Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">Aucun resultat</td>
+                <td colspan="3">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+    <br></br>
 
-    <a href="{{ path('categorie_new') }}">Ajouter</a>
+    <a href="{{ path('categorie_new') }}" class="btn btn-secondary btn-lg">Creation d'une nouvelle catégorie</a>
 {% endblock %}

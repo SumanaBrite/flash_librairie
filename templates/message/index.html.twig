@@ -3,7 +3,7 @@
 {% block title %}Messages de contact{% endblock %}
 
 {% block body %}
-    <h1>Message de contact</h1>
+    <h1>Messages de contact</h1>
 <br> </br>
     <table class="table">
         <thead>
@@ -36,13 +36,10 @@
     
 <br> </br>
         <div >
-            <a href="{{ path('message_new') }}">Rédiger un nouveau message</a>
+            <a href="{{ path('message_new') }}" class="btn btn-secondary btn-lg">Rédiger un nouveau message</a>
         </div>
 
-        <div >
-            <a href="{{ path('home') }}">retour à l'accueil</a>
-        </div>
-
+        
     
 
 {% endblock %}

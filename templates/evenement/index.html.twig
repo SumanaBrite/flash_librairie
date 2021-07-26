@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Evenement index{% endblock %}
+{% block title %}Evènements{% endblock %}
 
 {% block body %}
-    <h1>Evenement index</h1>
+    <h1>Liste des évènements</h1>
+    
 
     <table class="table">
         <thead>
@@ -30,17 +31,19 @@
                 <td><img src="/images/uploads/{{ evenement.path }}" alt="{{ evenement.image }}"></td>
                       
                 <td>
-                    <a href="{{ path('evenement_show', {'id': evenement.id}) }}">Afficher</a>
-                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">Modifier</a>
+                    <a href="{{ path('evenement_show', {'id': evenement.id}) }}">👀Voir</a>
+                    /
+                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">📝Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('evenement_new') }}">Create new</a>
+
+    <a href="{{ path('evenement_new') }}" class="btn btn-secondary btn-lg">Creation d'un nouvel évènement</a>
 {% endblock %}
