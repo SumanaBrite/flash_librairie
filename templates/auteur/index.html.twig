@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Auteur index{% endblock %}
+{% block title %}Auteurs{% endblock %}
 
 {% block body %}
-    <h1>Auteur index</h1>
+    <h1>Liste des auteurs</h1>
+    <br></br>
 
     <table class="table">
         <thead>
@@ -27,8 +28,9 @@
                 <td>{{ auteur.image }}</td>
                 <td><img src="/images/uploads/{{ auteur.path }}" class="img-small" alt="{{ auteur.image }}"></td>
                 <td>
-                    <a href="{{ path('auteur_show', {'id': auteur.id}) }}">Afficher || </a>
-                    <a href="{{ path('auteur_edit', {'id': auteur.id}) }}">Modifier</a>
+                    <a href="{{ path('auteur_show', {'id': auteur.id}) }}">👀Voir</a>
+                    /
+                    <a href="{{ path('auteur_edit', {'id': auteur.id}) }}">📝Editer</a>
                 </td>
             </tr>
         {% else %}
@@ -38,6 +40,7 @@
         {% endfor %}
         </tbody>
     </table>
+    <br></br>
 
-    <a href="{{ path('auteur_new') }}">Ajouter un nouvel Auteur</a>
+    <a href="{{ path('auteur_new') }}" class="btn btn-secondary btn-lg">Ajouter un nouvel auteur</a>
 {% endblock %}

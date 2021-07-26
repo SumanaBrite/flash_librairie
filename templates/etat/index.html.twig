@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Etat index{% endblock %}
+{% block title %}Etats{% endblock %}
 
 {% block body %}
-    <h1>Etat index</h1>
+    <h1>Liste de états</h1>
+    <br></br>
 
     <table class="table">
         <thead>
@@ -19,17 +20,18 @@
                 <td>{{ etat.id }}</td>
                 <td>{{ etat.libelle }}</td>
                 <td>
-                    <a href="{{ path('etat_show', {'id': etat.id}) }}">Afficher</a>
-                    <a href="{{ path('etat_edit', {'id': etat.id}) }}">Modifier</a>
+                    <a href="{{ path('etat_show', {'id': etat.id}) }}">👀Voir</a>
+                    /
+                    <a href="{{ path('etat_edit', {'id': etat.id}) }}">📝Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">Aucun resultat</td>
+                <td colspan="3">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('etat_new') }}">Ajouter</a>
+    <a href="{{ path('etat_new') }}" class="btn btn-secondary btn-lg">Creation d'un nouvel état</a>
 {% endblock %}
