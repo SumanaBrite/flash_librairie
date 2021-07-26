@@ -64,6 +64,7 @@ class AnnexeController extends AbstractController
         return $this->render('annexe/contact.html.twig', [
             'controller_name' => 'AnnexeController',
         ]);
+        
     }
 
     /**
