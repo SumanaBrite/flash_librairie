@@ -14,7 +14,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
- * @Route("/admin/auteur")
+ * @Route("/auteur")
  */
 class AuteurController extends AbstractController
 {

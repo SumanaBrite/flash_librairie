@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 
 /**
- * @Route("/admin/evenement")
+ * @Route("/evenement")
  */
 class EvenementController extends AbstractController
 {
