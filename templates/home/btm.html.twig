@@ -1,13 +1,6 @@
 
-
-
 {%  set nbr = 0 %}
-<div class="row mt-5">
-
-
-
-{# <div class="col col-1"></div> #}
-
+<div class="row mt-2">
  {% for article in articles %}   
 
     {% if nbr < 6 %}
@@ -17,7 +10,7 @@
                        
                            
                         <div class="card-body"> 
-                            <h5 class="card-title mb-0">{{ article.titre }} title</h5>
+                            <h6 class="card-title mb-0">{{ article.titre }} </h6>
                             
                         </div>
                             <img src="/images/uploads/{{ article.path }}" class="cover-image-bottom card-img-bottom" alt="{{ article.image }}">

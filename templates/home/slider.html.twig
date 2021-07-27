@@ -1,6 +1,6 @@
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 
-  {# <ol class="carousel-indicators">
+  <ol class="carousel-indicators">
   
   {% set nbr = 0 %}
 
@@ -11,8 +11,9 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="{{nbr}}"></li>
     {% endif %}
     {%  set nbr = nbr + 1 %}
-   </ol> 
-  {% endfor %}#}
+    {# <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> #}
+  </ol>
+  {% endfor %}
 
   {% set nbr = 0 %}
 

@@ -1,24 +1,27 @@
+{% set nbr = 0 %}
+{% for auteur in auteurs %}
 
-    {% set nbr = 0 %}
-    {% for auteur in auteurs %}
+	<div>
+		{% if nbr < 3 %}
 
-        <div >
-            {% if nbr < 3 %}
-                
-				<div class="card mb-3 shadow"> 
-					    {# <div class="col-md-2"> #}
-                        {# {% set image = '/images/uploads/' ~ auteur.path %} #}
-					    <img src="/images/uploads/{{auteur.path}}" class="cover-image card-img-top" alt="{{ auteur.image }}"> 
-						<div class="card-body">
-							<h5 class="card-title">{{ auteur.nom ~ auteur.prenom }}</h5>
-							<p class="card-text">{{ auteur.description }}</p>
-						</div>
-						
+			<div class="card shadow mb-5">
+				<h3 class="text-center p-2  text-uppercase"></h3>
+				
+				{# <div class="col-md-2"> #}
+				{# {% set image = '/images/uploads/' ~ auteur.path %} #}
+				<img src="/images/uploads/{{auteur.path}}" class="cover-image card-img-top" alt="{{ auteur.image }}">
+				<div class="card-body">
+					<h5 class="card-title">{{ auteur.nom ~ auteur.prenom }}</h5>
+					<p class="card-text">{{ auteur.description }}</p>
 				</div>
-		
-               {% set nbr = nbr + 1  %}
-            {% endif %}
-        </div>
-    
+				<div class="price-discount">
+					<span>promo</span>
+				</div>
+			</div>
 
-    {% endfor %}
+			{% set nbr = nbr + 1  %}
+		{% endif %}
+	</div>
+
+
+{% endfor %}

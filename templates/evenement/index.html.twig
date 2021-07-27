@@ -27,7 +27,7 @@
                 <td>{{ evenement.ville }}</td>
                 <td>{{ evenement.date ? evenement.date|date('Y-m-d') : '' }}</td>
                 <td>{{ evenement.image }}</td>
-                <td><img src="/images/uploads/{{ evenement.path }}" alt="{{ evenement.image }}"></td>
+                <td><img src="/images/uploads/{{ evenement.path }}" class="img-small"alt="{{ evenement.image }}"></td>
                       
                 <td>
                     <a href="{{ path('evenement_show', {'id': evenement.id}) }}">Afficher</a>
