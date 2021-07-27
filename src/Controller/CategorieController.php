@@ -47,6 +47,18 @@ class CategorieController extends AbstractController
             'form' => $form,
         ]);
     }
+    /**
+     * @Route("/visiteur", name="categorie_visiteur", methods={"GET"})
+     */
+    public function visiteur(CategorieRepository $categorieRepository): Response
+    {
+        return $this->render('categorie/index2.html.twig', [
+            'categories' => $categorieRepository->findAll(),
+        ]);
+    }
+
+
+
 
     /**
      * @Route("/{id}", name="categorie_show", methods={"GET"})
