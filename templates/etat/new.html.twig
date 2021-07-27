@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Etat{% endblock %}
+{% block title %}Nouvel Etat{% endblock %}
 
 {% block body %}
-    <h1>Create new Etat</h1>
+    <h1>Création d'un nouvel état</h1>
+    <br></br>
 
     {{ include('etat/_form.html.twig') }}
 
-    <a href="{{ path('etat_index') }}">back to list</a>
+    <br></br>
+    <a href="{{ path('etat_index') }}" class="btn btn-secondary btn-lg">Retour à la liste</a>
 {% endblock %}
