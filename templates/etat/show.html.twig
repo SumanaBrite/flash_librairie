@@ -5,8 +5,8 @@
 {% block body %}
     <h1>Etat</h1>
     <br></br>
-
-    <table class="table">
+<div class="jumbotron">
+    <table class="table table table-bordered table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -18,7 +18,7 @@
             </tr>
         </tbody>
     </table>
-
+</div>
     <br></br>
 
     <a href="{{ path('etat_edit', {'id': etat.id}) }}" class="btn btn-secondary btn-lg">Editer</a>

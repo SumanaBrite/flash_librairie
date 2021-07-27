@@ -1,12 +1,13 @@
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Evènements{% endblock %}
 
 {% block body %}
-    <h2>Liste des évènements</h2>
-    <div class="jumbotron">
+    <h1>Liste des évènements</h1>
+    
 
-    <table class="table table table-bordered table-striped">
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -16,7 +17,7 @@
                 <th>Date</th>
                 <th>Libellé Image</th>
                 <th>Image</th>
-                <th>actions</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -30,11 +31,7 @@
                 <td>{{ evenement.image }}</td>
                 <td><img src="/images/uploads/{{ evenement.path }}" class="img-small"alt="{{ evenement.image }}"></td>
                       
-                <td>
-                    <a href="{{ path('evenement_show', {'id': evenement.id}) }}">👀Voir</a>
-                    /
-                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">📝Editer</a>
-                </td>
+               
             </tr>
         {% else %}
             <tr>
@@ -43,8 +40,7 @@
         {% endfor %}
         </tbody>
     </table>
-    </div>
 
 
-    <a href="{{ path('evenement_new') }}" class="btn btn-secondary btn-lg">Creation d'un nouvel évènement</a>
+    
 {% endblock %}

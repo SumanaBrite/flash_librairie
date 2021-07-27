@@ -27,6 +27,15 @@ class AuteurController extends AbstractController
             'auteurs' => $auteurRepository->findAll(),
         ]);
     }
+     /**
+     * @Route("/visiteur", name="auteur_visiteur", methods={"GET"})
+     */
+    public function visiteur(AuteurRepository $articleRepository): Response
+    {
+        return $this->render('auteur/index2.html.twig', [
+            'auteurs' => $articleRepository->findAll(),
+        ]);
+    }
 
     /**
      * @Route("/new", name="auteur_new", methods={"GET","POST"})

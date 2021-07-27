@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %} Bienvenue
+			{% block title %}
+				Bienvenue
 			{% endblock %}
 		</title>
 
@@ -18,18 +19,21 @@
 		href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
 
 		{# Run `composer require symfony/webpack-encore-bundle`
-								           and uncomment the following Encore helpers to start using Symfony UX #}
+																           and uncomment the following Encore helpers to start using Symfony UX #}
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 		<link rel="stylesheet" href="css/style.css">
 		<style>:root
 		{
-			--primary: #f15f2a;
-			--secondary: #955739;
+			--primary: #f15f2a; // orange
+			--secondary: #955739; //
 			--grey: #d6b1c4;
 			--white: #ffffff;
 			--light-black-0: #222222;
 			--light-black: #29272e;
 			--lighter-black: #333;
+			--logo-book: #cab59a; // grey
+			--logo-biblia: #101943; // logo blue
+			--rose: #d6b1c4;
 		}
 
 		body {
@@ -42,16 +46,21 @@
 			font-weight: 400;
 		}
 		.navbar {
-			margin-bottom: 60px;
-			color: orange;
+
+			color: #5d554c;
 			font-size: 1.25rem;
+			margin-bottom: 0;
+			background-color: #d6b1c4;
 
-
+		}
+		.navbar-dark .navbar-nav .nav-link {
+			color: var(--logo-biblio);
 		}
 		.list-social-icon {
 			display: inline-flex;
-			background: #ec5129a1;
+			background: #cab59a;
 			padding: 5px;
+			border: 1px solid var(--logo-biblio);
 			border-radius: 50%;
 			color: var(--color--white);
 			justify-content: center;
@@ -75,34 +84,34 @@
 			background: var(--primary);
 			color: var(--white);
 		}
-		.navbar {
-			margin-bottom: 0;
-			background-color: #d6b1c4;
-			color: var(--primary);
 
-		}
+
 		.btn-primary {
 			background-color: var(--primary);
 			border-color: var(--primary);
 			box-shadow: none;
 			color: var(--white);
 		}
-
+		/* 
 		.btn-outline-primary:hover {
 			color: var(--white);
 			background-color: var(--primary);
 			border-color: var(--primary);
-		}
+		} */
 
-		.btn-primary:hover {
+		/* .btn-primary:hover {
 			color: var(--white);
 			background-color: var(--primary);
 			border-color: var(--primary);
-		}
+		} */
 
 		.btn-outline-primary {
 			color: var(--primary);
 			border-color: var(--primary);
+		}
+		.img-big{
+			height: 300px;
+			weight: 500px;
 		}
 
 		.nav-pills .nav-link {
@@ -110,8 +119,15 @@
 			text-transform: uppercase;
 			-webkit-transition: all 0.3s ease;
 			transition: all 0.3s ease;
-
-
+		}
+		.nav-tab-primary .nav-tabs .nav-item.show .nav-link,
+		.nav-tabs .nav-link.active {
+			color: var(--light-black-0);
+			background-color: #a24d9261;
+			border-color: #ffffff #ffffff #fff;
+			border-radius: 5px;
+			/* border-bottom: 3px solid var(--primary); */
+			border: 3px solid pink;
 		}
 
 		.nav-line .nav-pills .nav-link {
@@ -227,15 +243,16 @@
 		}
 
 		footer {
-			background-color: var(--light-black-0);
+			background-color: #d6b1c4;
 			padding: 50px;
-			color: var(--white);
+			color: var(--secondary);
+			font-size: 1rem;
 		}
 
 		footer i,
 		footer a,
 		footer .text-reset {
-			color: var(--white) !important;
+			color: blue;
 		}
 
 		footer a {
@@ -251,7 +268,7 @@
 			¨ min-height: calc(100vh - 260px);
 		}
 		.nav-tab-primary {
-			¨ padding: 20px 20px;
+			padding: 20px;
 			background: #ffffff;
 			border-radius: 10px;
 			box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -280,20 +297,23 @@
 			border-top: 1px solid #f1f1f1;
 		}
 		.btm {
-			max-height: 240px;
+			height: 80px;
 
 		}
-         /* h6{
+		/* h6{
             min-height:100px;
         } */
-		h1,
+
 		h2,
 		h3,
 		h4,
 		h5,
 		h6 {
 			color: var(--primary);
-            font-weight:bold;
+			font-weight: bold;
+		}
+		h1 {
+			color: var(--logo-book);
 		}
 
 		.carousel-item {
@@ -308,23 +328,24 @@
 			border-color: #ffffff #ffffff #fff;
 			border-radius: 0;
 			border-bottom: 3px solid var(--primary);
-		}
-		.footer {
-			background-color: #d6b1c4;
+		} 
 
+
+		.price-discount {
+			background: #2b2b2b;
+			position: absolute;
+			color: #ea9f1c;
+			border-radius: 11px;
+			padding: 5px 18px;
+			right: -60px;
+			top: 20px;
+			font-weight: 500;
+			font-family: "liberation_sansbold";
+			font-size: 30px;
 		}
-        .price-discount {
-  background: orange;
-  position: absolute;
-  color: var(--light-black-0: #222222);
-  border-radius: 50%;
-  padding: 10px 10px;
-  right: -10px;
-  top: 40px;
-  font-weight: 500;
-  font-family: "liberation_sansbold";
-  font-size: 30px;
-}
+		.button {
+			background: var(--logo-biblia);
+		}
 	</style>
 	{% block stylesheets %}{% endblock %}
 

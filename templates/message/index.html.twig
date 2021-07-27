@@ -1,46 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Messages de contact{% endblock %}
-
-{% block body %}
-    <h1>Messages de contact</h1>
-<br> </br>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Prenom</th>
-                <th>Nom</th>
-                <th>Email</th>
-                <th>Message</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for message in messages %}
-            <tr>
-                <td>{{ message.id }}</td>
-                <td>{{ message.prenom }}</td>
-                <td>{{ message.nom }}</td>
-                <td>{{ message.email }}</td>
-                <td>{{ message.message }}</td>
-                
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">Aucun message</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    
-<br> </br>
-        <div >
-            <a href="{{ path('message_new') }}" class="btn btn-secondary btn-lg">Rédiger un nouveau message</a>
-        </div>
-
-        
-    
-
+{% block title %}Messages de contact
 {% endblock %}
 
+{% block body %}
+	<h1>Messages de contact</h1>
+	<br>
+</br>
+<div class="jumbotron">
+<table class="table table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Prenom</th>
+			<th>Nom</th>
+			<th>Email</th>
+			<th>Message</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for message in messages %}
+			<tr>
+				<td>{{ message.id }}</td>
+				<td>{{ message.prenom }}</td>
+				<td>{{ message.nom }}</td>
+				<td>{{ message.email }}</td>
+				<td>{{ message.message }}</td>
+
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="5">Aucun message</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+</div>
+
+
+<br></br><div>
+<a href="{{ path('message_new') }}" class="btn btn-secondary btn-lg">Rédiger un nouveau message</a></div>{% endblock %}

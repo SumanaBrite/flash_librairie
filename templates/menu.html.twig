@@ -145,42 +145,42 @@
 
       {% else %}
 
-        {% if is_granted("ROLE_USER") %}
+      {% if is_granted("ROLE_USER") %}
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ path("article_index") }}">Articles</a>
+            <a class="nav-link" href="{{ path("article_visiteur") }}">Articles</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ path("auteur_index") }}">Auteurs</a>
+            <a class="nav-link" href="{{ path("auteur_visiteur") }}">Auteurs</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ path("categorie_index") }}">Catégories</a>
+            <a class="nav-link" href="{{ path("categorie_visiteur") }}">Catégories</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ path("etat_index") }}">Etats</a>
+            <a class="nav-link" href="{{ path("etat_visiteur") }}">Etats</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ path("evenement_index") }}">Evènements</a>
+            <a class="nav-link" href="{{ path("evenement_visiteur") }}">Evènements</a>
           </li>
 
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ path("article_index") }}">Articles</a>
+            <a class="nav-link" href="{{ path("article_visiteur") }}">Articles</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ path("auteur_index") }}">Auteurs</a>
+            <a class="nav-link" href="{{ path("auteur_visiteur") }}">Auteurs</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ path("evenement_index") }}">Evenements</a>
+            <a class="nav-link" href="{{ path("evenement_visiteur") }}">Evenements</a>
           </li>
         {% endif %}
-        
+                 
 
       
       {% endif %}

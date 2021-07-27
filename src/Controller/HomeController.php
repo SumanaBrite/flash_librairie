@@ -2,18 +2,19 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Entity\Categorie;
 use App\Entity\Evenement;
 use App\Repository\AuteurRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\CategorieRepository;
 use App\Repository\EvenementRepository;
+use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpClient\HttpClient;
 
 class HomeController extends AbstractController
 {
@@ -129,5 +130,14 @@ class HomeController extends AbstractController
 
         // et on repart vers notre formulaire ... avec des données dans la session
         return $this->redirectToRoute('home', [], Response::HTTP_SEE_OTHER);
+    }
+    /**
+     * @Route("/{id}/detail", name="article_detail", methods={"GET"})
+     */
+    public function show(Article $article): Response
+    {
+        return $this->render('home/detail.html.twig', [
+            'article' => $article,
+        ]);
     }
 }

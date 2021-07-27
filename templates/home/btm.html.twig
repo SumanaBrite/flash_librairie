@@ -1,28 +1,32 @@
-
 {%  set nbr = 0 %}
 <div class="row mt-2">
- {% for article in articles %}   
+	{% for article in articles %}
 
-    {% if nbr < 6 %}
-        
-                <div class="col col-2">
-                    <div class="card mt-3 shadow" >
-                       
-                           
-                        <div class="card-body"> 
-                            <h6 class="card-title mb-0">{{ article.titre }} </h6>
-                            
-                        </div>
-                            <img src="/images/uploads/{{ article.path }}" class="cover-image-bottom card-img-bottom" alt="{{ article.image }}">
-                           
-                       
-                    </div>
-                </div>
-    {% endif %} 
-   
-    {%  set nbr = nbr + 1 %}
-{% endfor %} 
+		{% if nbr < 6 %}
+
+			<div class="col sm-6 md-4 lg-2">
+				<div class="card mt-3 shadow">
+					
+
+						<div class="card-body btm">
+							<h6 class="card-title mb-0">{{ article.titre }}
+							</h6>
+
+						</div>
+						<img
+						src="/images/uploads/{{ article.path }}" class="cover-image-bottom card-img-bottom" alt="{{ article.image }}">
+					{# <div class="price-discount">
+											<span>promo</span>
+										</div> #}
+
+
+					</div>
+					<a href=" {{ path('article_detail', {id: article.id } ) }}" class="card-link btn btn-warning btn-lg mx-auto">
+					Détail de l'article</a>
+			</div>
+		{% endif %}
+
+		{%  set nbr = nbr + 1 %}
+	{% endfor %}
 
 </div>
-
-

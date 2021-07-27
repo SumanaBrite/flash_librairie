@@ -70,6 +70,17 @@ class ArticleController extends AbstractController
     }
 
     /**
+     * @Route("/visiteur", name="article_visiteur", methods={"GET"})
+     */
+    public function visiteur(ArticleRepository $articleRepository): Response
+    {
+        return $this->render('article/index2.html.twig', [
+            'articles' => $articleRepository->findAll(),
+        ]);
+    }
+
+
+    /**
      * @Route("/{id}", name="article_show", methods={"GET"})
      */
     public function show(Article $article): Response

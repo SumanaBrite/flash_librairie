@@ -5,13 +5,13 @@
 {% block body %}
     <h1>Liste de états</h1>
     <br></br>
-<div class="jumbotron">
-    <table class="table table table-bordered table-striped">
+
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Libelle</th>
-                <th>actions</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -19,11 +19,7 @@
             <tr>
                 <td>{{ etat.id }}</td>
                 <td>{{ etat.libelle }}</td>
-                <td>
-                    <a href="{{ path('etat_show', {'id': etat.id}) }}">👀Voir</a>
-                    /
-                    <a href="{{ path('etat_edit', {'id': etat.id}) }}">📝Editer</a>
-                </td>
+               
             </tr>
         {% else %}
             <tr>
@@ -32,7 +28,6 @@
         {% endfor %}
         </tbody>
     </table>
-    </div>
 
-    <a href="{{ path('etat_new') }}" class="btn btn-secondary btn-lg">Creation d'un nouvel état</a>
+    
 {% endblock %}

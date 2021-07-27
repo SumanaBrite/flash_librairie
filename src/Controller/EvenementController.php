@@ -70,6 +70,17 @@ class EvenementController extends AbstractController
     }
 
     /**
+     * @Route("/visiteur", name="evenement_visiteur", methods={"GET"})
+     */
+    public function visiteur(EvenementRepository $evenementRepository): Response
+    {
+        return $this->render('evenement/index2.html.twig', [
+            'evenements' => $evenementRepository->findAll(),
+        ]);
+    }
+
+
+    /**
      * @Route("/{id}", name="evenement_show", methods={"GET"})
      */
     public function show(Evenement $evenement): Response

@@ -1,48 +1,52 @@
+<div
+	id="tab1" class="px-5">
 
-<div id="tab1" class="px-5" >
+	{# <h4>  Panorama des livres </h4> #}
 
-{# <h4>  Panorama des livres </h4> #}
+	{% for categorie in categories %}
 
- {% for categorie in categories %}
-    
-    {%  set nbr = 0 %}
-    {%  set flg = 0 %}
-    {# <div class="row align-items-start mt-5"> #}
-    {# <div class="col col-1"></div> #}
-    {% for article in articles %}
-      
+		{%  set nbr = 0 %}
+		{%  set flg = 0 %}
+		{# <div class="row align-items-start mt-5"> #}
+		{# <div class="col col-1"></div> #}
+			{% for article in articles %}
 
-        {% if article.categorie.id == categorie.id %}
-            {% if nbr == 0 %}
-             {%  set flg = 1 %}
-               <h3 class="text-center p-2  text-uppercase"> {{ categorie.libelle }}</h3>
-                <div class="row">
-            {% endif  %}
-            {% if nbr < 3 %}
-                <div class="col col-4">
-                    <div class="card mb-3 shadow">
-                         
-                            <img src="/images/uploads/{{ article.path }}" class="cover-image card-img-top" alt="{{ article.image }}">
-                        
-                                <div class="card-body"> <h5 class="card-title">{{ article.titre }}</h5>
-                                    <p class="card-text">{{ article.description }}</p>
-                                
-                                </div>
-                         
-                    </div>
-                    
-                </div>  
-                 {%  set nbr = nbr + 1 %}
-            {% endif %}
-            
-        {% endif %}
-    {% endfor %}
- 
-    {% if flg == 1 %}
-          </div>
 
-    {% endif  %}
-    
+				{% if article.categorie.id == categorie.id %}
+					{% if nbr == 0 %}
+					{%  set flg = 1 %}
+						<h3 class="text-center p-2  text-uppercase"> {{ categorie.libelle }}</h3>
+					<div class="row">
+					{% endif  %}
+					{% if nbr < 3 %}
+						<div class="col sm-d-none md-6 lg-4">
+							<div class="card mb-3 shadow">
 
-{% endfor %}
+								<img src="/images/uploads/{{ article.path }}" class="cover-image card-img-top" alt="{{ article.image }}">
+
+								<div class="card-body">
+									<h5 class="card-title">{{ article.titre }}</h5>
+									<p class="card-text">{{ article.description }}</p>
+
+									<a href=" {{ path('article_detail', {id: article.id } ) }}" class="card-link btn btn-warning btn-lg">Détail de l'article</a>
+
+
+								</div>
+
+							</div>
+
+						</div>
+						{%  set nbr = nbr + 1 %}
+					{% endif %}
+
+				{% endif %}
+			{% endfor %}
+
+			{% if flg == 1 %}
+			</div>
+
+		{% endif  %}
+
+
+	{% endfor %}
 </div>

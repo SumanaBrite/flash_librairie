@@ -1,3 +1,4 @@
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Catégories{% endblock %}
@@ -5,13 +6,13 @@
 {% block body %}
     <h1>Catégorie</h1>
     <br></br>
-<div class ="jumbotron">
-    <table class="table table-bordered table-striped">
+
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Libelle</th>
-                <th>actions</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -19,11 +20,7 @@
             <tr>
                 <td>{{ categorie.id }}</td>
                 <td>{{ categorie.libelle }}</td>
-                <td>
-                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}">👀Voir</a>
-                    /
-                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">📝Editer</a>
-                </td>
+                
             </tr>
         {% else %}
             <tr>
@@ -32,9 +29,7 @@
         {% endfor %}
         </tbody>
     </table>
+    
 
-    </div>
-    <br></br>
-
-    <a href="{{ path('categorie_new') }}" class="btn btn-secondary btn-lg">Creation d'une nouvelle catégorie</a>
+  
 {% endblock %}

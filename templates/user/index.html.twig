@@ -5,8 +5,8 @@
 {% block body %}
     <h1>Liste des Utilisateurs</h1>
     <br></br>
-
-    <table class="table">
+<div class="jumbotron">
+    <table class="table table table-bordered table-striped">
         <thead>
             <tr>
                 {# <th>Id</th> #}
@@ -40,6 +40,7 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
 
     <br></br>
     <a href="{{ path('user_new') }}" class="btn btn-secondary btn-lg">Creation d'un nouvel utilisateur</a>

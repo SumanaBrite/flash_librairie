@@ -49,6 +49,17 @@ class EtatController extends AbstractController
     }
 
     /**
+     * @Route("/visiteur", name="etat_visiteur", methods={"GET"})
+     */
+    public function visiteur(EtatRepository $etatRepository): Response
+    {
+        return $this->render('etat/index2.html.twig', [
+            'etats' => $etatRepository->findAll(),
+        ]);
+    }
+
+
+    /**
      * @Route("/{id}", name="etat_show", methods={"GET"})
      */
     public function show(Etat $etat): Response
